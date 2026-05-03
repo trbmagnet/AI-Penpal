@@ -1,10 +1,12 @@
 # AI-Penpal
 AI 笔友是一个基于 Python 的自动邮件回复机器人。它通过 IMAP 协议监控邮箱收件箱，检测新邮件后调用 AI 接口（OpenAI/Anthropic）生成符合预设角色的回复，再通过 SMTP 发送。支持对话记忆和定期摘要。 技术栈：Python 3.11+, CustomTkinter (GUI), SQLite, IMAP/SMTP
+
 2. 运行环境
 • 操作系统：Windows 10/11（64位）
 • 无需安装 Python，exe 已包含所有依赖
 • 需要网络连接（用于 IMAP 收信、SMTP 发信、AI 接口调用）
-3. 快速开始
+
+4. 快速开始
 3.1 文件准备
 将以下文件放在同一个文件夹中：
 文件	说明
