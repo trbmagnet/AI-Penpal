@@ -1,0 +1,55 @@
+# AI Pen Pal Configuration
+# Copy this file to config.yaml and fill in your settings.
+
+# --- AI Character ---
+character:
+  name: "小花"                          # Display name for the AI pen pal
+  personality: "温暖、好奇，偶尔带点诗意。喜欢用自然的比喻来表达。"
+  background: "成都的大学生，热爱烹饪和徒步旅行。"
+  writing_style: "温暖随性，偶尔引用中国谚语，落款带有个人风格。"
+
+# --- AI Model ---
+model:
+  provider: "openai"                     # "openai" or "anthropic"
+  api_key: "sk-..."                      # Or use env var: ${OPENAI_API_KEY}
+  base_url: null                          # Optional: custom endpoint (e.g., for DeepSeek, Qwen)
+  model_name: "gpt-4o"                   # e.g., "gpt-4o", "claude-sonnet-4-20250514"
+  max_tokens: 1024                        # Optional: max reply length
+  temperature: 0.8                        # Optional: creativity level
+
+# --- Email Account ---
+email:
+  address: "your.email@gmail.com"
+  imap_server: "imap.gmail.com"
+  imap_port: 993
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 587
+  auth_password: "your-app-password"      # Or use env var: ${EMAIL_PASSWORD}
+  use_tls: true
+
+# --- Scheduling ---
+scheduler:
+  check_interval_minutes: 5               # How often to check for new emails
+
+# --- Filters ---
+filters:
+  allowed_senders:                        # Only reply to these email addresses
+    - "friend@example.com"
+    - "buddy@outbox.org"
+  ignore_older_than_minutes: 60           # Ignore emails received more than 60 min ago
+
+# --- Tracking ---
+tracking:
+  db_path: "replied.db"                   # SQLite database path
+  cleanup_days: 30                        # Remove entries older than 30 days
+
+# --- Conversation History ---
+history:
+  enabled: true                        # Enable conversation memory
+  max_recent_messages: 10              # Number of recent messages kept in full
+  summarize_every_n: 5                 # Summarize old messages every N exchanges
+
+# --- Logging ---
+logging:
+  level: "INFO"                           # DEBUG, INFO, WARNING, ERROR
+  file: "ai_penpal.log"                   # Log file path (null = no file logging)

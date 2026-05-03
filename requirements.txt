@@ -1,0 +1,5 @@
+openai>=1.0.0
+anthropic>=0.20.0
+pyyaml>=6.0
+customtkinter>=5.4.0
+imapclient>=2.3.1
